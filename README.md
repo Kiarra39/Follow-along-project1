@@ -13,17 +13,17 @@
 
 ### Key Features and Steps Completed:
 
-Organized the project into separate frontend and backend folders.
+Organized the project into two different folders of frontend and backend.
 
 * Frontend Setup:
 
-1. Created a React app using  npm createvite@latest ecom_frontend to manage the user interface.
-2. Configured Tailwind CSS 
+1. Created a new React app using npm createvite@latest ecom_frontend to handle the front end.   
+2. Configured Tailwind CSS
 
+* Backend Setup:  
 
-* Backend Setup:
-
-1. Installed Express for building the backend server, Mongoose, and CORS using npm i express mongoose cors and nodemon.
-2. Created a Login page with email and password fields.
-3. Managed user input with React's useState hook for email and password state.
-4. Styled the Login page using Tailwind CSS 
+1. Ran npm init -y to initialize backend    
+2. Installed Express to develop the backend server, Mongoose, and CORS using npm i express mongoose cors and nodemon.     
+3. Created the Login page with input fields for email and password.            
+4. Handled the input of the user by creating email and password state with the help of useState hook.         
+5. Used Tailwind CSS for styling the Login page.
