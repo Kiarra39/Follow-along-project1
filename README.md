@@ -42,3 +42,8 @@ Organized files and folders for better readability and functionality
 *  Error Handling    
 Added an error messages with better debugging.
 
+## Milestone 4 
+
+1. User Model: This defines how data is structured for users with names, emails, passwords, and how they go about their storage in the database.     
+2. User Controller : Controls the operations like create, update, or retrieve the user details from the database.   
+3. Multer Setup: File handling, for instance, for saving the user profile picture or other files.  
