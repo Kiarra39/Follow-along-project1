@@ -27,3 +27,18 @@ Organized the project into two different folders of frontend and backend.
 3. Created the Login page with input fields for email and password.            
 4. Handled the input of the user by creating email and password state with the help of useState hook.         
 5. Used Tailwind CSS for styling the Login page.
+
+
+## Milestone -3
+
+Organized files and folders for better readability and functionality
+
+* Server Setup:    
+1. Developed a backend server with Node.js and Express and handled Api requests      
+2. Set up the server to listen  for a specific port for incoming requests
+*  Database Connection      
+1. Connected MongoDB to handle data storage.
+2. Ensured a successful connection  between the server and database.
+*  Error Handling    
+Added an error messages with better debugging.
+
