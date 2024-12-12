@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 function Loginp(){
     
     const [userdeets, setdeets] = useState({
@@ -49,6 +50,9 @@ function Loginp(){
         >
           Login
         </button>
+        <p className="text-center">
+                        Do not have an account? <Link to ={'/signup'}>Sign up</Link>
+                    </p>
       </form>
     </div>
   </div>
