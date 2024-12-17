@@ -46,4 +46,21 @@ Added an error messages with better debugging.
 
 1. User Model: This defines how data is structured for users with names, emails, passwords, and how they go about their storage in the database.     
 2. User Controller : Controls the operations like create, update, or retrieve the user details from the database.   
-3. Multer Setup: File handling, for instance, for saving the user profile picture or other files.  
+3. Multer Setup: File handling, for instance, for saving the user profile picture or other files.
+
+ ## Milestone 5
+ 1. Sign-Up Page UI
+Created a  Sign-Up Page with React with fields that include:
+Name
+Email
+Password
+
+3. Form Validation
+Used a validation object developed by applying Regular Expressions to test:
+Name: Must not be empty and characters.
+Email: Should meet proper email format, such as example@example.com.
+Password: Secured by checking for security such as minimum length
+
+5. React Router Configuration
+Configured React Router for easy navigation between pages
+Set up routing for the present page.
