@@ -1,19 +1,21 @@
+const express = require('express');
+const userRouter = require('./routes/user.route.js');
 
-if(process.env.NODE_ENV!=='PRODUCTION'){
-    require('dotenv').config({
-        path: './src/config/.env',
-    });
+if (process.env.NODE_ENV !== 'PRODUCTION') {
+  require('dotenv').config({
+    path: './src/config/.env',
+  });
 }
-const express= require('express');
 
-const app= express();
-const userRouter= require('./routes/user.route');
-app.get("/", (req,res)=>{
-    return res.send("Welcome");
+const app = express();
+// M6
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  return res.send('Welcome to backend');
 });
-app.use('')
-// app.get("/user/squad", (req,res)=>{
-//     return res.send({message: 'Good afternoon'});
-// });
 
-module.exports=app;
+app.use('/user', userRouter);
+
+
+module.exports = app;
