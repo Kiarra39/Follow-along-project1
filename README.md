@@ -98,3 +98,4 @@ It gives error asking the user to sign-up in case of being invalid.
 Route: 
 POST /signup-for user sign up hashing of password    
 POST /login - For user login with password validation and token generation.
+
