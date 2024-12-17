@@ -7,7 +7,7 @@ return (
   <>
   {/* <SignupPage/> */}
   <Routes>
-    <Route path ="/"/>
+    <Route path ="/" element ={<h1> Hello World</h1>}/>
     <Route path="/signup" element={<SignupPage/>}/>
     <Route path ="/login" element ={<Loginp />}/>
   </Routes>

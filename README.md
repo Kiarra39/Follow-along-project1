@@ -47,3 +47,25 @@ Added an error messages with better debugging.
 1. User Model: This defines how data is structured for users with names, emails, passwords, and how they go about their storage in the database.     
 2. User Controller : Controls the operations like create, update, or retrieve the user details from the database.   
 3. Multer Setup: File handling, for instance, for saving the user profile picture or other files.  
+
+
+## Milestone 5
+
+1.Created the Sign-Up Page (UI):
+
+* Used React to build the page with input fields for Name, Email, and Password.
+* Styled the page using Tailwind CSS 
+
+2.Implemented Form Validation:
+
+For Name: Ensured it is at least 2 characters long and does not contain symbols.         
+For Email: Validated the email format (e.g., name@example.com).         
+For Password: Checked for a minimum of 8 characters and the inclusion of uppercase, lowercase, numbers, and special characters.
+
+3.Routing:
+
+* Used React Router to set up navigation between pages, like moving from the Sign-Up page to the Login page.         
+
+4.Validation Logic:   
+
+Created a ValidationObject.js file to handle the logic for checking if the user inputs met the validation criteria.

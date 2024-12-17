@@ -28,7 +28,8 @@ function SignupForm() {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
  const NameV= ValidationObject.validateName(formData.name);
  const EmailV= ValidationObject.validateEmail(formData.email);
  const PassV= ValidationObject.validatePass(formData.password);
@@ -41,6 +42,7 @@ if (typeof EmailV == 'string' && EmailV.length>2){
 if(typeof PassV == 'string' && PassV.length>2){
     return setError (PassV);
 }
+setError('');
   };
 
   return (
