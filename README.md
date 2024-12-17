@@ -99,3 +99,15 @@ Route:
 POST /signup-for user sign up hashing of password    
 POST /login - For user login with password validation and token generation.
 
+## Milestone 8
+
+Card Component:
+
+Accepts product details such as title, image, price, etc. as props.           
+It displays an image, product name, price, discount percentage if available, and a button for adding to the cart.
+
+
+Homepage Layout:         
+
+Shows multiple cards in a 3-column grid layout.           
+It uses Tailwind CSS classes  in order to create  flexible design.
