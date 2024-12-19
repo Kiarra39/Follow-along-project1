@@ -111,3 +111,21 @@ Homepage Layout:
    
 Shows multiple cards in a 3-column grid layout.                 
 It uses Tailwind CSS classes  in order to create  flexible design.
+
+
+## Milestone 9
+Created Product Entry Form: A form to input product details such as title, description, price, etc.      
+
+Used FormData: Made the form data and images by doing a network call to the server using FormData in uploading files.
+
+Submitted Data: The data has been submitted to the back end using a POST request to store the product detail in the database.
+
+
+
+## Milestone 10
+
+Product Schema: Defined a Mongoose schema for product details, such as title, description, price, etc., along with validation. 
+
+File Upload: Multer is used for file uploads and Cloudinary for cloud image storage.
+    
+POST Endpoint: Created a POST endpoint that receives product data, uploads images to Cloudinary, and saves all details in MongoDB.     
