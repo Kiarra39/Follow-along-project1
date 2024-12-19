@@ -15,9 +15,9 @@ function HomePage() {
       <div className="grid grid-cols-3">
         {data.map((ele, index) => {
           return (
-            <div style={{ margin: 'auto' }} className="border border-white">
-              <Card title={ele.title} Index={index} />
-            </div>
+            <div style={{ margin: 'auto' }} className="border border-white" key={index}>
+            <Card title={ele.title} index={index} />
+          </div>
           );
         })}
       </div>
