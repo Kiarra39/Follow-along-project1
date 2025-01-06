@@ -25,6 +25,7 @@ useEffect(()=>{
       <h1 className="text-center">Home Page for Follow along</h1>
   
       <div className="grid grid-cols-3">
+
         {data && data.length > 0 ? (
           data?.map((ele, index) => {
             return (
@@ -44,6 +45,15 @@ useEffect(()=>{
         ) : (
           <p>No products found.</p> // Display a message if no data is available
         )}
+
+        {data.map((ele, index) => {
+          return (
+            <div style={{ margin: 'auto' }} className="border border-white" key={index}>
+            <Card title={ele.title} index={index} />
+          </div>
+          );
+        })}
+
       </div>
     </div>
   );}

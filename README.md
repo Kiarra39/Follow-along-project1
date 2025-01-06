@@ -130,6 +130,7 @@ File Upload: Multer is used for file uploads and Cloudinary for cloud image stor
     
 POST Endpoint: Created a POST endpoint that receives product data, uploads images to Cloudinary, and saves all details in MongoDB.     
 
+
 ## Milestone 11
 
 
@@ -144,3 +145,4 @@ POST Endpoint: Created a POST endpoint that receives product data, uploads image
 1. Fetched products from the backend with axios using a get request.
 2. useEffect() is used to load the products.
 3. Used the Card component to display the product with its details.
+
