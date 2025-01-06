@@ -111,3 +111,36 @@ Homepage Layout:
    
 Shows multiple cards in a 3-column grid layout.                 
 It uses Tailwind CSS classes  in order to create  flexible design.
+
+
+## Milestone 9
+Created Product Entry Form: A form to input product details such as title, description, price, etc.      
+
+Used FormData: Made the form data and images by doing a network call to the server using FormData in uploading files.
+
+Submitted Data: The data has been submitted to the back end using a POST request to store the product detail in the database.
+
+
+
+## Milestone 10
+
+Product Schema: Defined a Mongoose schema for product details, such as title, description, price, etc., along with validation. 
+
+File Upload: Multer is used for file uploads and Cloudinary for cloud image storage.
+    
+POST Endpoint: Created a POST endpoint that receives product data, uploads images to Cloudinary, and saves all details in MongoDB.     
+
+## Milestone 11
+
+
+1. First we set up a route and created a get request.
+2. Used a database query to retrieve the data and then send that data to the client.
+3. Handled errors accoridngly.
+
+
+## Milestone 12
+
+
+1. Fetched products from the backend with axios using a get request.
+2. useEffect() is used to load the products.
+3. Used the Card component to display the product with its details.
