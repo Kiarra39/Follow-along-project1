@@ -1,4 +1,9 @@
+
+import  { useState } from 'react';
+
+
 import React, { useState } from 'react';
+
 import axios from 'axios';
 
 function ProductEntryPage() {
@@ -30,7 +35,7 @@ function ProductEntryPage() {
     });
     console.log(formData);
   };
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);

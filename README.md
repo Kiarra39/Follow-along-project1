@@ -129,3 +129,20 @@ Product Schema: Defined a Mongoose schema for product details, such as title, de
 File Upload: Multer is used for file uploads and Cloudinary for cloud image storage.
     
 POST Endpoint: Created a POST endpoint that receives product data, uploads images to Cloudinary, and saves all details in MongoDB.     
+
+
+## Milestone 11
+
+
+1. First we set up a route and created a get request.
+2. Used a database query to retrieve the data and then send that data to the client.
+3. Handled errors accoridngly.
+
+
+## Milestone 12
+
+
+1. Fetched products from the backend with axios using a get request.
+2. useEffect() is used to load the products.
+3. Used the Card component to display the product with its details.
+
