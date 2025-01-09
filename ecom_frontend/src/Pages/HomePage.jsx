@@ -38,6 +38,7 @@ useEffect(()=>{
                   originalPrice={ele.originalPrice}
                   discountedPrice={ele.discountedPrice}
                   rating={ele.rating}
+                  id={ele._id}
                 />
               </div>
             );
@@ -46,14 +47,7 @@ useEffect(()=>{
           <p>No products found.</p> // Display a message if no data is available
         )}
 
-        {data.map((ele, index) => {
-          return (
-            <div style={{ margin: 'auto' }} className="border border-white" key={index}>
-            <Card title={ele.title} index={index} />
-          </div>
-          );
-        })}
-
+        
       </div>
     </div>
   );}
