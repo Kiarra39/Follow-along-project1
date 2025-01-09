@@ -2,6 +2,7 @@ const multer = require('multer');
 const cloudinary = require('../utils/cloudinary.js');
 const fs = require('fs');
 const ProductModel = require('../models/Product.model.js');
+const { findByIdAndUpdate } = require('../models/user.model.js');
 
 
 
@@ -64,4 +65,54 @@ const getProductDataController= async (req,res)=>{
   return res.status(500).send({message:er.message,succes:false })
  }
 }
-module.exports = { createProductController, getProductDataController };
+const updateProductController= async(req,res)=>{
+  const {
+    title,description, rating, discountedPrice, originalPrice, quantity, category,}=req.body;
+    const {id}= req.params;
+    try{
+      const checkIfProductExists= await ProductModel.findOne({_id:id})
+      if(!checkIfProductExists){
+        return res.status({message: 'Product Not Found'});
+      }
+      const arrayImage = req.files.map(async (singleFile, index) => {
+        return cloudinary.uploader
+          .upload(singleFile.path, {
+            folder: 'uploads',
+          })
+          .then((result) => {
+            fs.unlinkSync(singleFile.path);
+            return result.url;
+          });
+      });
+      const Imagedata=await Promise.all(arrayImage);
+      const findAndUpdate= await ProductModel.findByIdAndUpdate(
+        {_id:id},
+       { title,description, rating, discountedPrice, originalPrice, quantity, category,images:Imagedata,},
+       {
+        new:true,
+       }
+      );
+      return res.status(201).send({
+        message:'Document updated succesfully',
+        success:true,
+        UpdatedResult:findAndUpdate,
+      });
+    }
+    catch(er){
+      return res.status(500).send({message: er.message, success:false})
+    }
+  }
+const getSingleProductDocumentController= async(req,res)=>{
+  const {id}= req.params;
+  try{
+    const data=await ProductModel.findOne({_id:id});
+    if(!data){
+      return res.status(404).send({Message:'Product Not Found'});
+    }
+    return res.status(200).send({message: 'product Successfully fetched', data, success:false})
+  }
+  catch(er){
+    return res.status(200).send({message:er.message, success:false});
+  }
+}
+module.exports = { createProductController, getProductDataController, updateProductController, getSingleProductDocumentController };
