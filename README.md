@@ -146,3 +146,24 @@ POST Endpoint: Created a POST endpoint that receives product data, uploads image
 2. useEffect() is used to load the products.
 3. Used the Card component to display the product with its details.
 
+## Milestone 13 
+
+### Backend :
+Created a PUT route to handle the update functionality. Allows data to be modified for a specific item which it accesses by its unique id.
+
+### Frontend:
+1. Created a page where users can update product details.
+2. Fetch the current product's data from the backend using its id and fill the input fields (except for images) with the existing values of that product.
+
+
+## Milestone 14
+  ### DELETE Route in Backend:
+
+Created a DELETE endpoint that listens for requests with a product ID.
+Extracts the ID from the request and deletes the matching product in MongoDB.
+Sends a success or error response to confirm the action.
+
+### Delete Button in Frontend:
+Added a delete button to each product card in the Card.jsx file.     
+On button click,  a DELETE request is sent with the product ID to the server.         
+Updates the UI to remove the deleted product after a successful response.

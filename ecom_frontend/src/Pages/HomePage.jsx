@@ -19,7 +19,11 @@ useEffect(()=>{
   callhandle();
 },[]);
   console.log(data);
-
+  const handleDelete= async(id)=>{
+    console.log('id', id);
+    const data= await axios.delete(`http://localhost:8080/product/${id}`);
+    setdata(data.data.data)
+  }
   return (
     <div>
       <h1 className="text-center">Home Page for Follow along</h1>
@@ -39,6 +43,7 @@ useEffect(()=>{
                   discountedPrice={ele.discountedPrice}
                   rating={ele.rating}
                   id={ele._id}
+                  handleDelete={handleDelete}
                 />
               </div>
             );
