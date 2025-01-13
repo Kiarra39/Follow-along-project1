@@ -167,3 +167,6 @@ Sends a success or error response to confirm the action.
 Added a delete button to each product card in the Card.jsx file.     
 On button click,  a DELETE request is sent with the product ID to the server.         
 Updates the UI to remove the deleted product after a successful response.
+
+## Milestone 15 
+
