@@ -2,8 +2,6 @@ const multer = require('multer');
 const cloudinary = require('../utils/cloudinary.js');
 const fs = require('fs');
 const ProductModel = require('../models/Product.model.js');
-const { findByIdAndUpdate } = require('../models/user.model.js');
-
 
 
 const createProductController = async (req, res) => {
@@ -15,10 +13,12 @@ const createProductController = async (req, res) => {
     originalPrice,
     quantity,
     category,
+    
   } = req.body;
 
   try {
-    const arrayImage = req.files && req.files?.map(async (singleFile, index) => {
+    console.log(req.files, req.body);
+    const arrayImage = req.files.map(async (singleFile, index) => {
       return cloudinary.uploader
         .upload(singleFile.path, {
           folder: 'uploads',
@@ -39,6 +39,7 @@ const createProductController = async (req, res) => {
       quantity,
       category,
       images: dataImages,
+      userEmail : req.userEmailAddress,
     });
     return res.status(201).send({
       message: 'Image Successfully Uploaded',

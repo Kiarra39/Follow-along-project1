@@ -16,6 +16,7 @@ const SchemaObject = {
         'https://banner2.cleanpng.com/20180402/ryq/avhexzm7z.webp',
     },
   ],
+  userEmail : { type:String},
 
 };
 
