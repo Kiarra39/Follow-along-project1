@@ -176,3 +176,10 @@ Updates the UI to remove the deleted product after a successful response.
 
 1.Single Page Product Details: Implemented a detailed view for individual products, allowing users to see all product-specific information on a dedicated page.
 2. Image Modal Component: Developed a  modal to display product images in an enlarged view when clicked, .
+
+## Milestone 17
+
+Create Cart Schema
+Create Controller: Implement  addToCart functions.
+Create Routes: Add GET and POST routes for cart operations.
+Link Routes: Connect routes to your server.

@@ -1,11 +1,15 @@
+
+
+import axios from 'axios';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 function Loginp(){
     
     const [userdeets, setdeets] = useState({
         email: '',
         password: '',
       });
+      const navigate=useNavigate();
       const handleChange = (event) => {
         const { name, value } = event.target;
         console.log(name, value);
@@ -13,12 +17,24 @@ function Loginp(){
           ...userdeets,
           [name]: value,
         });
+      };
+      const handleSubmit = async (event) => {
+        event.preventDefault(); // Prevent form from reloading the page
+        try {
+          const response = await axios.post('http://localhost:8080/user/Login', userdeets);
+          localStorage.setItem('token', response.data.token);
+          console.log('Logged in successfully:', userdeets);
+          navigate('/');
+        } catch (error) {
+          console.error('Error during login:', error);
+          alert('Login failed. Please check your credentials.');
+        }
       };return(
         <>
     <div className="flex items-center justify-center h-screen  bg-gradient-to-r from-blue-400 via-pink-500 to-red-500">
     <div className="bg-white p-10 rounded-xl shadow-2xl w-96">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Login Page</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="mb-6">
           <label className="block text-lg font-medium mb-2 text-gray-600"> Email:</label>
           <input
