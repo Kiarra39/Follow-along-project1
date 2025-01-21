@@ -183,3 +183,15 @@ Create Cart Schema
 Create Controller: Implement  addToCart functions.
 Create Routes: Add GET and POST routes for cart operations.
 Link Routes: Connect routes to your server.
+
+
+## Milestone 18
+
+Create a GET /cart route that retrieves the user's cart, fetches product details, and returns the data. Use jwtVerify middleware for authentication.
+
+
+
+
+
+
+
