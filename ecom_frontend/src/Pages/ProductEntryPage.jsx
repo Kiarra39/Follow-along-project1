@@ -73,8 +73,8 @@ function ProductEntryPage() {
     });
 
     console.log(formDataBody);
-  
-    axios.post('http://localhost:8080/product/create-product', formDataBody, {
+    const token = localStorage.getItem('token');
+     axios.post(`http://localhost:8080/product/create-product?${token}`, formDataBody, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
