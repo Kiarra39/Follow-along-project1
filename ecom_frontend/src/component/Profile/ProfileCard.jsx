@@ -136,9 +136,16 @@ export function ProfileCard() {
             value={
               userData?.address?.length > 0 ? (
                 <ul className="list-disc list-inside">
-                  {/* {userData.address.map((addr, index) => (
-                      <li key={index}>{addr}</li>
-                    ))} */}
+                  {userData.address.map((SingleAdd, index) => (
+                      <>
+                      <li key={index}>City{SingleAdd.city}</li>
+                      <li key={index}>Country:{SingleAdd.country}</li>
+                      <li key={index}>Address 1:{SingleAdd.address1}</li>
+                      <li key={index}>Address 2:{SingleAdd.address2}</li>
+                      <li key={index}>Pin Code{SingleAdd.zipCode}</li>
+                      <br/>
+                      </>
+                    ))} 
                 </ul>
               ) : (
                 <span className="text-gray-400 italic">
