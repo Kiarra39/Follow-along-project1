@@ -189,6 +189,12 @@ Link Routes: Connect routes to your server.
 
 Create a GET /cart route that retrieves the user's cart, fetches product details, and returns the data. Use jwtVerify middleware for authentication.
 
+## Milestone 19 
+Cart UI: Created a cart page to display products .
+Fetch Cart Details: Fetched user's cart data from the backend and displayed items dynamically.
+
+
+
 
 
 
