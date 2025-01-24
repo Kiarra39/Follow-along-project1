@@ -18,7 +18,7 @@ function Card({ title,
         );
         console.log('Product Added To Cart Successfully...');
       } catch (er) {
-        alert(er.message);
+        alert(er.response.data.message);
         console.log(er.message);
       }
     };
