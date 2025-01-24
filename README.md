@@ -198,8 +198,15 @@ Fetch Cart Details: Fetched user's cart data from the backend and displayed item
 Implemented the UI for the profile route, displaying user details.
 Created a backend route to fetch and provide user data such as profile information and address.
 
+## Milestone 21
 
+State for Address: A state is created using useState to store address details like city, country, zip code, etc.
 
+## Milestone 22
+
+* A POST endpoint (/add-address) is created to receive address data from the frontend.      
+* The user's JWT token is verified to ensure authentication.
+* The address is added to the user's addresses array in the database, and the updated profile is saved.
 
 
 
