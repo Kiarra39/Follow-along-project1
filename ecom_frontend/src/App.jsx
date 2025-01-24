@@ -8,9 +8,12 @@ import Navbar from "./component/Navbar/navbar";
 import SinglePageProduct from './Pages/SingleProductPage';
 import CartPage from './Pages/CartPage';
 import ProfilePage from './Pages/Profile';
+import AddressCard from './component/AddressComp/AdressCard';
+
 function App() {
   return (
     <>
+    <AddressCard/>
     <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -28,3 +31,4 @@ function App() {
 }
 
 export default App;
+
