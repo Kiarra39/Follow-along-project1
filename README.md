@@ -193,7 +193,10 @@ Create a GET /cart route that retrieves the user's cart, fetches product details
 Cart UI: Created a cart page to display products .
 Fetch Cart Details: Fetched user's cart data from the backend and displayed items dynamically.
 
+## Milestone 20 
 
+Implemented the UI for the profile route, displaying user details.
+Created a backend route to fetch and provide user data such as profile information and address.
 
 
 
