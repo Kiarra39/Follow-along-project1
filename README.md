@@ -208,6 +208,25 @@ State for Address: A state is created using useState to store address details li
 * The user's JWT token is verified to ensure authentication.
 * The address is added to the user's addresses array in the database, and the updated profile is saved.
 
+## Milestone 23 
 
+# Backend:
+* Created an API to fetch user addresses.
+* Secured it using JWT authentication      middleware.
+*Validated user ID before querying the database.
+*Retrieved addresses from the database and handled errors properly.
+*Added the route in user.route.js.
 
+# Frontend:
+* Routing: Added a route for the "Select Address" page and linked it to the "Checkout" button in the cart.
+
+* Address Selection Page:
+Fetched addresses from the backend using useEffect.       
+Included the JWT token in API requests.
+Stored addresses in state and passed them to AddressList. 
+
+* Address List Component:
+Displayed addresses dynamically.
+Allowed users to select an address and stored it in localStorage.
+Redirected users to the order confirmation page upon selection.
 
