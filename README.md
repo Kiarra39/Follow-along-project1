@@ -230,3 +230,13 @@ Displayed addresses dynamically.
 Allowed users to select an address and stored it in localStorage.
 Redirected users to the order confirmation page upon selection.
 
+## Milestone 24 
+* Routing: Added a route for the Order Confirmation page.
+
+* Order Confirmation Page:
+  Fetched cart data from the backend.
+  Retrieved selected address from localStorage.
+  Calculated total order value and displayed cart items using CartCard.
+  Added a "Confirm Order" button.
+
+*Cart Card Component: Updated to display the first image from the images array correctly.
