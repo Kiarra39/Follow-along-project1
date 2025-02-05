@@ -240,3 +240,14 @@ Redirected users to the order confirmation page upon selection.
   Added a "Confirm Order" button.
 
 *Cart Card Component: Updated to display the first image from the images array correctly.
+
+## Milestone 25
+
+* Order Model: Defined schema with user reference, order items, shipping address, total amount, status, and timestamps.
+
+* Order Route: Created POST /confirm-order with JWT authentication for secure order creation.
+
+* Order Controller:
+   Validates user and product data.
+   Creates separate orders per product with the same address.
+   Stores order details in MongoDB and responds with success or error messages.
