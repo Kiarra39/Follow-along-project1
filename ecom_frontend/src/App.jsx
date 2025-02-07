@@ -10,7 +10,7 @@ import CartPage from './Pages/CartPage';
 import ProfilePage from './Pages/Profile';
 import AddressCard from './component/AddressComp/AdressCard';
 import SelectAddres from './Pages/SelectAddresspage';
-import OrderConfirmation from './Pages/OrderConformationPage';
+import OrderConfirmation from './Pages/OrderConfirmationPage';
 function App() {
   return (
     <>
