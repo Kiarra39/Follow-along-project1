@@ -1,12 +1,12 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import CartCard from '../component/ProductCard/CartCard';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import CartCard from "../component/ProductCard/CartCard";
+import { useNavigate } from "react-router-dom";
 export default function OrderConfirmation() {
   const [cartData, setUsersCartData] = useState([]);
   const [total, setTotal] = useState(0);
   const [userAddress, setAddress] = useState(
-    JSON.parse(localStorage.getItem('address')) || {}
+    JSON.parse(localStorage.getItem("address")) || {}
   );
   const navigate = useNavigate();
   // totoal
@@ -14,9 +14,9 @@ export default function OrderConfirmation() {
   // cart data
   useEffect(() => {
     const getCartData = async () => {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       if (!token) {
-        return alert('Token is missing , Please login');
+        return alert("Token is missing , Please login");
       }
       const response = await axios.get(
         `http://localhost:8080/cart/get-user-cart-data?token=${token}`
@@ -24,19 +24,19 @@ export default function OrderConfirmation() {
 
       let sum = 0;
       response.data.cartData.forEach((ele, index) => {
-        sum = sum + ele.productId.originalPrice;
+        sum = sum + ele.productId && ele.productId.originalPrice;
       });
       setTotal(sum);
-
+      console.log(response.data.cartData);
       setUsersCartData(response.data.cartData);
     };
 
     getCartData();
   }, []);
   const OrderConfirmation = async () => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (!token) {
-      return alert('Token is missing please signup');
+      return alert("Token is missing please signup");
     }
     const response = await axios.post(
       `http://localhost:8080/orders/confirm-order?token=${token}`,
@@ -46,7 +46,7 @@ export default function OrderConfirmation() {
         totalAmount: total,
       }
     );
-    navigate('/order-history');
+    navigate("/order-history");
     console.log(response);
   };
 
@@ -62,9 +62,9 @@ export default function OrderConfirmation() {
             className="p-4 bg-white w-1/2"
             onClick={() => handleClickAddress(userAddress._id)}
           >
-            <div style={{ marginBottom: '8px' }}>
+            <div style={{ marginBottom: "8px" }}>
               <h3 className="text-base font-medium text-gray-800 capitalize mb-2">
-                {userAddress.addressType || 'Address'}
+                {userAddress.addressType || "Address"}
               </h3>
               <div className="text-gray-600">
                 <p>{userAddress.address1}</p>

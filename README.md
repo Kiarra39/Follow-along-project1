@@ -210,14 +210,14 @@ State for Address: A state is created using useState to store address details li
 
 ## Milestone 23 
 
-# Backend:
+### Backend:
 * Created an API to fetch user addresses.
 * Secured it using JWT authentication      middleware.
 *Validated user ID before querying the database.
 *Retrieved addresses from the database and handled errors properly.
 *Added the route in user.route.js.
 
-# Frontend:
+### Frontend:
 * Routing: Added a route for the "Select Address" page and linked it to the "Checkout" button in the cart.
 
 * Address Selection Page:
@@ -262,14 +262,16 @@ Redirected users to the order confirmation page upon selection.
 
 ## Milestone 27
 
-# Frontend Enhancements:
+### Frontend Enhancements:
 * Created OrdersPage to display all user orders.
 * Added " Orders" link in the Navbar for easy navigation.
 
-# API Integration:
+### API Integration:
 * Sent a GET request to /order-history endpoint.
 * Included the user’s email in the request to fetch their orders.
 
-# Data Handling & Display:
+### Data Handling & Display:
 * Retrieved user orders from the backend.
 * Displayed the order details dynamically on the Orders page.
+
+## Milestone 28 
