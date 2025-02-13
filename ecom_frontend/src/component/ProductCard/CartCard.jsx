@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { X, ArrowDown, RotateCcw } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { X, ArrowDown, RotateCcw } from "lucide-react";
 export default function CartCard({
   title,
   images,
@@ -11,10 +11,11 @@ export default function CartCard({
   id,
   createdBy,
   orderStatus,
+  handleCancel,
 }) {
   return (
     <div className="max-w-4xl mx-auto bg-white rounded-lg shadow p-4">
-       {orderStatus && (
+      {orderStatus && (
         <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm w-[18%] text-center mb-5">
           {orderStatus}
         </div>
@@ -24,7 +25,7 @@ export default function CartCard({
         <div className="relative w-64">
           <Link to={`/product-details/${id}`}>
             <img
-               src={typeof images == 'string' ? images : images[0]}
+              src={typeof images == "string" ? images : null}
               alt="Product Image"
               className="rounded-lg object-cover"
             />
@@ -39,7 +40,10 @@ export default function CartCard({
               <p className="text-lg text-gray-600">{description}</p>
               <p className="text-gray-500 mt-1">Sold by: {createdBy}</p>
             </div>
-            <button className="text-gray-500 hover:text-gray-700">
+            <button
+              className="text-gray-500 hover:text-gray-700"
+              onClick={orderStatus ? () => handleCancel(id) : () => {}}
+            >
               <X className="w-6 h-6" />
             </button>
           </div>
