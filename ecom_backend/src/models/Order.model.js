@@ -6,9 +6,9 @@ const orderSchema = new mongoose.Schema(
       ref: 'User',
       required: true,
     },
-    orderItems: [
+    orderItems: 
       { type: mongoose.Schema.Types.ObjectId, ref: 'Product', require: true },
-    ],
+    
     shippingAddress: {
       country: { type: String, required: true },
       city: { type: String, required: true },

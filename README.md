@@ -251,3 +251,25 @@ Redirected users to the order confirmation page upon selection.
    Validates user and product data.
    Creates separate orders per product with the same address.
    Stores order details in MongoDB and responds with success or error messages.
+
+   ## Milestone 26
+* Added OrderRouter to manage order-related routes.
+* Implemented GET /user-orders-data to fetch user orders.
+* Validated userId and checked user existence in the database.
+* Retrieved orders from OrderModel and returned them in the response.
+* Secured the endpoint with JWT authentication.
+
+
+## Milestone 27
+
+# Frontend Enhancements:
+* Created OrdersPage to display all user orders.
+* Added " Orders" link in the Navbar for easy navigation.
+
+# API Integration:
+* Sent a GET request to /order-history endpoint.
+* Included the user’s email in the request to fetch their orders.
+
+# Data Handling & Display:
+* Retrieved user orders from the backend.
+* Displayed the order details dynamically on the Orders page.
