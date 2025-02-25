@@ -275,3 +275,29 @@ Redirected users to the order confirmation page upon selection.
 * Displayed the order details dynamically on the Orders page.
 
 ## Milestone 28 
+
+### Backend Changes
+* PATCH /cancel-order Endpoint – Accepts orderId, updates order status to "Cancelled".
+* Validation – Ensures only the correct user can cancel their own orders.
+* Response Handling – Sends a success message upon successful cancellation.
+
+## Frontend Changes
+###  Order History Page – Added a "Cancel Order" button (visible only if the order isn’t canceled). Updates the UI dynamically.
+### Cart Page – Ensured the "Checkout" button redirects properly for order confirmation and shipping address entry.
+### CartCard Component – Handles order cancellation logic, ensuring the button disappears after cancellation.
+### Order History Page Refresh – Updates the order list dynamically after cancellation.
+
+
+## Milestone 29 && 30 
+
+### Backend Changes
+* Payment Routes & Controller – Created Payment.route.js and Payment.controller.js to handle order creation and payment processing.
+* Payment Model – Defined Payment.model.js to store transaction details.
+* App Configuration – Integrated payment routes into app.js and secured Razorpay API credentials in .env.
+
+### Frontend Changes
+* Added the checkout script in index.html.
+* Created Razorpay.js to manage payment requests.
+* Order Confirmation Page – Implemented a handlePay function, displays the total amount, and redirects users after successful payment.
+
+
