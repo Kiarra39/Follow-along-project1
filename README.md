@@ -281,11 +281,11 @@ Redirected users to the order confirmation page upon selection.
 * Validation – Ensures only the correct user can cancel their own orders.
 * Response Handling – Sends a success message upon successful cancellation.
 
-## Frontend Changes
-###  Order History Page – Added a "Cancel Order" button (visible only if the order isn’t canceled). Updates the UI dynamically.
-### Cart Page – Ensured the "Checkout" button redirects properly for order confirmation and shipping address entry.
-### CartCard Component – Handles order cancellation logic, ensuring the button disappears after cancellation.
-### Order History Page Refresh – Updates the order list dynamically after cancellation.
+### Frontend Changes
+*  Order History Page – Added a "Cancel Order" button (visible only if the order isn’t canceled). Updates the UI dynamically.
+* Cart Page – Ensured the "Checkout" button redirects properly for order confirmation and shipping address entry.
+*  CartCard Component – Handles order cancellation logic, ensuring the button disappears after cancellation.
+*  Order History Page Refresh – Updates the order list dynamically after cancellation.
 
 
 ## Milestone 29 && 30 
@@ -301,3 +301,33 @@ Redirected users to the order confirmation page upon selection.
 * Order Confirmation Page – Implemented a handlePay function, displays the total amount, and redirects users after successful payment.
 
 
+## Milestone 31
+
+In this milestone, we set up Redux to globally manage the user's email state in a React application. Here's a brief breakdown of what is done:
+
+1. Redux Store Setup (src/Redux/Store.js)
+
+* We use configureStore from @reduxjs/toolkit to create a Redux store.
+* The store is configured with a userReducer to manage the email state.
+* The store is exported for use across the app.
+
+2. Action Creator (src/Redux/User/UserActions.js)
+
+* We define setUserEmail, an action creator to update the user's email in the global state.
+* Inside setUserEmail, we dispatch the setEmail action to modify the Redux state.
+
+3. User Slice (src/Redux/User/UsersSlice.js)
+
+* An initial state is created with email set as an empty string.
+* We use createSlice to define the setEmail reducer function.
+* The setEmail action and reducer are exported for use in the store and components.
+
+4. Login Component (src/component/auth/Login.jsx)
+
+* useDispatch from react-redux is used to dispatch the setUserEmail action after a successful login.
+* The entered email is stored in the Redux store.
+
+5. Main App Setup (src/main.jsx)
+
+* The Provider component from react-redux is used to wrap the App component.
+* The Redux store is passed as a prop to Provider, making the global state accessible throughout the app.

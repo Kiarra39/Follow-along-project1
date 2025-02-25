@@ -3,8 +3,12 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { Link ,useNavigate} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUserEmail } from '../../Redux/User/UserActions';
+import { setEmail } from '../../Redux/User/UsersSlice';
+
 function Loginp(){
-    
+  const dispatch = useDispatch();
     const [userdeets, setdeets] = useState({
         email: '',
         password: '',
@@ -22,6 +26,8 @@ function Loginp(){
         event.preventDefault(); // Prevent form from reloading the page
         try {
           const response = await axios.post('http://localhost:8080/user/Login', userdeets);
+          console.log(userdeets);
+          dispatch(setUserEmail(userdeets.email));
           localStorage.setItem('token', response.data.token);
           console.log('Logged in successfully:', userdeets);
           navigate('/');
