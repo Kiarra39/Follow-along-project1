@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ValidationObject from '../../validation.js';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
+import axios from 'axios';
 function SignupForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,26 +10,26 @@ function SignupForm() {
     file: '',
   });
   const [error, setError] = useState('');
-
+const navigateUser= useNavigate();
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
+    const { name, value,files } = e.target;
+    if(name=='file'){
       setFormData({
         ...formData,
-        file: file,
+        [name]: files[0],
       });
+    }else{
+      setFormData({
+        ...formData,
+        [name]:value
+      })
     }
   };
 
-  const handleSubmit = () => {
+  
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
  const NameV= ValidationObject.validateName(formData.name);
  const EmailV= ValidationObject.validateEmail(formData.email);
  const PassV= ValidationObject.validatePass(formData.password);
@@ -40,6 +41,23 @@ if (typeof EmailV == 'string' && EmailV.length>2){
 }
 if(typeof PassV == 'string' && PassV.length>2){
     return setError (PassV);
+}
+setError('');
+
+const formDataBody = new FormData();
+formDataBody.append('email', formData.email);
+formDataBody.append('password',formData.password);
+formDataBody.append('name', formData.name);
+formDataBody.append('file',formData.file);
+try{
+  await axios.post('http://localhost:8080/user/signup',formDataBody,{
+    headers:{
+      'Content-Type':'multipart/form-data'
+    }
+  })
+  navigateUser('/login');
+}catch(error){
+  console.log('Something wrong happened',error.message);
 }
   };
 
@@ -101,15 +119,15 @@ if(typeof PassV == 'string' && PassV.length>2){
                 type="file"
                 name="file"
                 accept=".jpg, .jpeg, .png"
-                onChange={handleFileChange}
-                disabled={!!formData.file} // Prevent additional uploads
+                onChange={handleChange}
+                // disabled={!!formData.file} // Prevent additional uploads
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
               />
-              {formData.file && (
+              {/* {formData.file && (
                 <p className="mt-2 text-sm text-gray-700">
                   Uploaded File: <strong>{formData.file.name}</strong>
                 </p>
-              )}
+              )} */}
             </div>
             <button
               type="submit"
@@ -118,7 +136,7 @@ if(typeof PassV == 'string' && PassV.length>2){
               Sign Up
             </button>
             <p className="text-center">
-                Already have an account? <Link to ={'/login'}>Sign up</Link>
+                Already have an account? <Link to ={'/login'}>Login</Link>
             </p>
           </form>
         </div>
